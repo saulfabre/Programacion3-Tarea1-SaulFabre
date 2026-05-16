@@ -5,7 +5,7 @@ public class Menu {
     static Scanner scanner = new Scanner(System.in);
 
     static public void main(String[] args) {
-        
+
     }
 
     public static void calculadoraBasica() {
@@ -71,5 +71,30 @@ public class Menu {
 
             System.out.println(">> Numero Impar");
         }
+    }
+
+    public static void tablaMultiplicar() {
+
+        System.out.println("================================");
+        System.out.println("       Tabla Multiplicar");
+        System.out.println("================================");
+
+        System.out.print(">> Ingrese su numero: ");
+        int numero = scanner.nextInt();
+
+        System.out.print(">> Ingrese su limite: ");
+        int limite = scanner.nextInt();
+
+        System.out.println("================================");
+        System.out.println("         Tabla Del " + numero);
+        System.out.println("================================");
+
+        System.out.println("--------------------------------");
+        for (int i = 1; i <= limite; i++) {
+
+            System.out.println(numero + " * " + i + " = " + (numero * i));
+
+        }
+        System.out.println("--------------------------------");
     }
 }
