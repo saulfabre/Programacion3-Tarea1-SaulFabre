@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Menu {
 
     static public void main(String[] args) {
-
+        
     }
 
     public static void calculadoraBasica() {
@@ -57,4 +57,21 @@ public class Menu {
         }
     }
 
+    public static void numeroParImpar() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print(">> Ingrese su numero: ");
+        int numero = scanner.nextInt();
+
+        if (numero % 2 == 0) {
+
+            System.out.println(">> Numero Par");
+        }
+
+        else {
+
+            System.out.println(">> Numero Impar");
+        }
+    }
 }
