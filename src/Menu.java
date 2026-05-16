@@ -5,7 +5,7 @@ public class Menu {
     static Scanner scanner = new Scanner(System.in);
 
      public static void main(String[] args) {
-
+        promedioNotas();
     }
 
     public static void calculadoraBasica() {
@@ -151,5 +151,47 @@ public class Menu {
         System.out.println(">> Cantidad Total: " + (contadorA + contadorE + contadorI + contadorO + contadorU));
         System.out.println("--------------------------------");
         }
+    }
+
+    public static void promedioNotas() {
+
+        System.out.println("================================");
+        System.out.println("         Promedio Notas");
+        System.out.println("================================");
+
+        System.out.print(">> Cantidad de asignaturas: ");
+        int cantidadAsignaturas = scanner.nextInt();
+
+        float[] notas = new float[cantidadAsignaturas];
+
+        float sumatoriaNotas = 0;
+
+        for (int i = 0; i < cantidadAsignaturas; i++) {
+
+            System.out.print(">> Calificacion asignatura " + (i + 1) + ": ");
+            notas[i] = scanner.nextFloat();
+            sumatoriaNotas+= notas[i];
+        }
+
+        float promedio = sumatoriaNotas / cantidadAsignaturas;
+
+        System.out.println("--------------------------------");    
+        for (int i = 0; i < notas.length; i++) {
+
+            System.out.println(">> Nota " + (i + 1) + ": " + notas[i]);
+        }    
+
+        System.out.println(">> Promedio: " + promedio);
+
+        if (promedio >= 70) {
+
+            System.out.println(">> Aprobaste");
+
+        }
+
+        else {
+            System.out.println(">> Desaprobaste");
+        }
+        System.out.println("--------------------------------");
     }
 }
