@@ -4,7 +4,7 @@ public class Menu {
 
     static Scanner scanner = new Scanner(System.in);
 
-    static public void main(String[] args) {
+     public static void main(String[] args) {
 
     }
 
