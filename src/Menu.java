@@ -97,4 +97,59 @@ public class Menu {
         }
         System.out.println("--------------------------------");
     }
+
+    public static void contadorVocales() {
+
+        int contadorA = 0;
+        int contadorE = 0;
+        int contadorI = 0;
+        int contadorO = 0;
+        int contadorU = 0;
+
+        System.out.print(">> Ingrese su palara: ");
+        String palabra = scanner.nextLine();
+
+        palabra = palabra.toLowerCase();
+        char[] palabraChar = palabra.toCharArray();
+
+        for (int i = 0; i < palabra.length(); i++) {
+
+            switch (palabraChar[i]) {
+                case 'a':
+                    contadorA++;
+                    break;
+                
+                case 'e':
+                    contadorE++;
+                    break;
+
+                case 'i':
+                    contadorI++;
+                    break;
+
+                case 'o':
+                    contadorO++;
+                    break;
+                
+                case 'u':
+                    contadorU++;
+                    break;
+            
+                default:
+                    continue;
+            }
+
+        System.out.println("================================");
+        System.out.println("         Palabra " + palabra);
+        System.out.println("================================");
+        System.out.println("--------------------------------");
+        System.out.println(">> Vocal A: " + contadorA);
+        System.out.println(">> Vocal E: " + contadorE);
+        System.out.println(">> Vocal I: " + contadorI);
+        System.out.println(">> Vocal O: " + contadorO);
+        System.out.println(">> Vocal U: " + contadorU);
+        System.out.println(">> Cantidad Total: " + (contadorA + contadorE + contadorI + contadorO + contadorU));
+        System.out.println("--------------------------------");
+        }
+    }
 }
