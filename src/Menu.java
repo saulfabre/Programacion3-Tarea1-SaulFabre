@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Menu {
 
+    static Scanner scanner = new Scanner(System.in);
+
     static public void main(String[] args) {
         
     }
 
     public static void calculadoraBasica() {
-
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("================================");
         System.out.println("       Calculadora Basica");
@@ -58,8 +58,6 @@ public class Menu {
     }
 
     public static void numeroParImpar() {
-
-        Scanner scanner = new Scanner(System.in);
 
         System.out.print(">> Ingrese su numero: ");
         int numero = scanner.nextInt();
