@@ -5,7 +5,39 @@ public class Menu {
     static Scanner scanner = new Scanner(System.in);
 
      public static void main(String[] args) {
-        promedioNotas();
+
+        int opcion;
+
+        do {
+
+        System.out.println("================================");
+        System.out.println("        MENU DE OPCIONES ");
+        System.out.println("================================");
+        System.out.println("[1] Calculadora basica");
+        System.out.println("[2] Numero par o impar");
+        System.out.println("[3] Tabla de multiplicar");
+        System.out.println("[4] Contador de vocales");
+        System.out.println("[5] Promedio de notas");
+        System.out.println("[6] Clase Estudiante");
+        System.out.println("[7] Cuenta Bancaria");
+        System.out.println("[8] Herencia de vehiculos");
+        System.out.println("[9] Matriz 3x3");
+        System.out.println("[10] Sistema basico de inventario");
+        System.out.println("[11] Salir de la aplicacion\n");
+        System.out.print("Opcion: ");
+
+        opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                break;
+        
+            default:
+                break;
+        }
+
+        } while (opcion != 11);
+
     }
 
     public static void calculadoraBasica() {
