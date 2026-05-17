@@ -1,8 +1,4 @@
-import java.util.Scanner;
-
 public class Estudiante {
-
-    Scanner scanner = new Scanner(System.in);
 
     private String nombre;
     private String apellido;
@@ -104,6 +100,19 @@ public class Estudiante {
     public void setIndice(int indice) {
         
         this.indice = indice;
+    }
+
+    public void mostrarDatos() {
+
+        System.out.println("--------------------------------");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Apellido: " + getApellido());
+        System.out.println("Matricula: " + getMatricula());
+        System.out.println("Carrera: " + getCarrera());
+        System.out.println("Correo: " + getCorreo());
+        System.out.println("Cuatrimestre: " + getCuatrimestre());
+        System.out.println("Indice: " + getIndice());
+        System.out.println("--------------------------------");
     }
 
 }
