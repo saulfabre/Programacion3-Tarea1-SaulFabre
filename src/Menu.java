@@ -30,7 +30,32 @@ public class Menu {
 
         switch (opcion) {
             case 1:
+                calculadoraBasica();
                 break;
+
+            case 2:
+                numeroParImpar();
+
+            case 3:
+                tablaMultiplicar();
+
+            case 4:
+                contadorVocales();
+
+            case 5:
+                promedioNotas();
+
+            case 6:
+                Estudiante estudiante = new Estudiante("Saul", "Fabre Fernandez", "1000-5958", "Ing. Sistemas", "saulfabre_@ucne.edu.do", 6, 0);
+                estudiante.mostrarDatos();
+
+                Estudiante estudiante2 = new Estudiante();
+                estudiante2.setNombre("Pedro");
+                estudiante2.setApellido("Hidalgo");
+                estudiante2.setCarrera("Ing. Sistemas");
+                estudiante2.mostrarDatos();
+
+                
         
             default:
                 break;
