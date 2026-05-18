@@ -57,29 +57,29 @@ public class CuentaBancaria {
         this.tipoCuenta = tipoCuenta;
     }
 
-    public void ingresarBalance(CuentaBancaria cuenta, float balance) {
+    public void ingresarBalance(float balanceAgregar) {
 
         if (balance <= 0 ) {
             System.out.println(">> No se puede ingresar este monto, ingrese otra cantidad");
         }
 
         else {
-            cuenta.setBalance(getBalance() + balance);
-            System.out.println(">> Sr " + cuenta.getTitular() + " Su monto ha sido ingresado a su cuenta con exito");
-            System.out.println(">> Su balance es: " + cuenta.getBalance());
+            balance+= balanceAgregar;
+            System.out.println(">> Sr " + titular + " Su monto ha sido ingresado a su cuenta con exito");
+            System.out.println(">> Su balance es: " + getBalance());
         }
     }
 
-    public void retirarBalance(CuentaBancaria cuenta, float balanceRetirar ) {
+    public void retirarBalance(float balanceRetirar) {
 
         if (balance < balanceRetirar) {
             System.out.println(">> Balance de la cuenta insuficiente");
         }
 
         else {
-            cuenta.setBalance(cuenta.getBalance() - balanceRetirar);
-            System.out.println(">> Sr " + cuenta.getTitular() + " Su balance se ha retirado con exito");
-            System.out.println(">> Su balance es: " + cuenta.getBalance());
+            balance-= balanceRetirar;
+            System.out.println(">> Sr " + titular + " Su balance se ha retirado con exito");
+            System.out.println(">> Su balance es: " + getBalance());
         }
     }
 
