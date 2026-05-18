@@ -27,6 +27,7 @@ public class Menu {
         System.out.print("Opcion: ");
 
         opcion = scanner.nextInt();
+        scanner.nextLine();
 
         switch (opcion) {
             case 1:
@@ -35,29 +36,89 @@ public class Menu {
 
             case 2:
                 numeroParImpar();
+                break;
 
             case 3:
                 tablaMultiplicar();
+                break;
 
             case 4:
                 contadorVocales();
+                break;
 
             case 5:
                 promedioNotas();
+                break;
 
             case 6:
-                Estudiante estudiante = new Estudiante("Saul", "Fabre Fernandez", "1000-5958", "Ing. Sistemas", "saulfabre_@ucne.edu.do", 6, 0);
+                Estudiante estudiante = new Estudiante("Saul", "Fabre Fernandez", "1000-5958", "Ing. Sistemas", "saulfabre_@ucne.edu.do", 6, 1);
                 estudiante.mostrarDatos();
 
                 Estudiante estudiante2 = new Estudiante();
                 estudiante2.setNombre("Pedro");
                 estudiante2.setApellido("Hidalgo");
+                estudiante2.setMatricula("123-456");
                 estudiante2.setCarrera("Ing. Sistemas");
+                estudiante2.setCorreo("algo@gmail.com");
+                estudiante2.setCuatrimestre(3);
+                estudiante2.setIndice(4);
                 estudiante2.mostrarDatos();
+                break;
 
+            case 7:
+                CuentaBancaria cuenta = new CuentaBancaria("Pedro", 65, 1, "Ahorros");
+                CuentaBancaria cuenta2 = new CuentaBancaria("Maria", 100, 2, "Corriente");
+
+                cuenta.mostrarDatos();
+                cuenta2.mostrarDatos();
+
+                cuenta.enviarBalance(2, cuenta2, 5);
+
+                cuenta.mostrarDatos();
+                cuenta2.mostrarDatos();
+
+                cuenta.ingresarBalance(100);
+                cuenta.mostrarDatos();
                 
-        
-            default:
+                cuenta.retirarBalance(50);
+                cuenta.mostrarDatos();
+                break;
+
+            case 8:
+                Carro carro = new Carro("Toyota", "Camry", "Blanco", 4);
+                carro.mostrarDatos();
+                carro.encenderVehiculo();
+                carro.apagarVehiculo();
+
+                Autobus autobus = new Autobus("Mercedes-Benz", "Tourismo", "Amarillo", 44);
+                autobus.mostrarDatos();
+                autobus.encenderVehiculo();
+                autobus.apagarVehiculo();
+                break;
+
+            case 9: 
+                matriz3x3();
+                break;
+
+            case 10:
+                SistemaInventario inventario = new SistemaInventario();
+
+                SistemaInventario arroz = new SistemaInventario("Arroz", "Pimco Premium", 15, 50);
+                SistemaInventario chocolate = new SistemaInventario("Chocolate", "Blanco", 25, 15);
+                SistemaInventario pan = new SistemaInventario();
+
+                pan.setNombre("Pan");
+                pan.setDescripcion("Pan");
+                pan.setStock(1);
+                pan.setPrecioProducto(5);
+
+                inventario.agregarProducto(arroz);
+                inventario.agregarProducto(chocolate);
+                inventario.agregarProducto(pan);
+                inventario.mostarProducto();
+                inventario.calcularValorInventario();
+                
+                inventario.mostrarValorTotal();
                 break;
         }
 
@@ -65,6 +126,7 @@ public class Menu {
 
     }
 
+    //Ejercicio 1
     public static void calculadoraBasica() {
 
         System.out.println("================================");
@@ -114,6 +176,7 @@ public class Menu {
         }
     }
 
+    //Ejercicio 2
     public static void numeroParImpar() {
 
         System.out.print(">> Ingrese su numero: ");
@@ -130,6 +193,7 @@ public class Menu {
         }
     }
 
+    //Ejercicio 3
     public static void tablaMultiplicar() {
 
         System.out.println("================================");
@@ -155,6 +219,7 @@ public class Menu {
         System.out.println("--------------------------------");
     }
 
+    //Ejercicio 4
     public static void contadorVocales() {
 
         int contadorA = 0;
@@ -195,9 +260,10 @@ public class Menu {
                 default:
                     continue;
             }
+        }
 
         System.out.println("================================");
-        System.out.println("         Palabra " + palabra);
+        System.out.println("         Palabra: " + palabra);
         System.out.println("================================");
         System.out.println("--------------------------------");
         System.out.println(">> Vocal A: " + contadorA);
@@ -207,9 +273,10 @@ public class Menu {
         System.out.println(">> Vocal U: " + contadorU);
         System.out.println(">> Cantidad Total: " + (contadorA + contadorE + contadorI + contadorO + contadorU));
         System.out.println("--------------------------------");
-        }
+
     }
 
+    //Ejercicio 5
     public static void promedioNotas() {
 
         System.out.println("================================");
@@ -251,4 +318,36 @@ public class Menu {
         }
         System.out.println("--------------------------------");
     }
+
+    //Ejercicio 9
+    public static void matriz3x3() {
+
+        int[][] matrizVacia = new int[3][3];
+
+        for (int i = 0; i < matrizVacia.length; i++) {
+
+            for (int j = 0; j < matrizVacia.length; j++) {
+
+                System.out.print(">> Rellene su matriz en " + i + "," + j + ": ");
+                matrizVacia[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("================================");
+        System.out.println(" Matriz ingresada por el usuario");
+        System.out.println("================================");
+        System.out.println("--------------------------------");
+
+        for (int i = 0; i < matrizVacia.length; i++) {
+
+            for (int j = 0; j < matrizVacia.length; j++) {
+
+                System.out.print(matrizVacia[i][j] + "   ");
+
+            }
+            System.out.println();
+        }
+        System.out.println("--------------------------------");
+    }
+
 }
